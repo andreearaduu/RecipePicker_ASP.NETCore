@@ -1,0 +1,121 @@
+﻿
+@model recipePickerApp.Models.RecipeCategoryView
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="~/css/style.css">
+<link rel="stylesheet" type="text/css" href="~/css/SearchRecipes.css">
+<link rel="stylesheet" type="text/css" href="~/css/popular_recipes_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
+<head>
+    <style>
+        input[type=submit] {
+            background-color: #7300e6;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+           input[type=submit]:hover{
+              background-color: #45a049;
+           }
+    </style>
+</head>
+<body>
+    <h3>Cauta retete</h3>
+    @*<div class="sidenav">
+        <h2 style="background-color:blueviolet;color:aliceblue">Categoria</h2>*@
+        @* asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Category>*@
+        @*@using (Html.BeginForm())
+        {
+            for (var i = 0; i < Model.Category.c(; i++)
+            {
+                <table>
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(it => it[i].City_ID)
+                            @Html.HiddenFor(it => it[i].City_Name)
+                            @Html.DisplayFor(it => it[i].City_Name)
+                        </td>
+                        <td>
+                            @Html.CheckBoxFor(it => it[i].IsSelected, new { Style = "vertical-align:3px}" })
+                        </td>
+                    </tr>
+                </table>
+            }
+            <input id="Submit1" type="submit" value="submit" />
+        }*@
+        @*<label class="container">
+                One
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">
+                Two
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">
+                Three
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container">
+                Four
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>*@
+
+        @*<form class="example" action="action_page.php">
+        @using (Html.BeginForm("SearchRecipes", "RecipeController", FormMethod.Get))
+        {
+            @Html.TextBox("name");
+           <input type="text" placeholder="Caută o rețetă" name="name">
+            <button><i class="fa fa-search"></i></button>
+        }
+        </form>*@
+
+        <!-- The form -->
+
+        <form asp-controller="Recipe" asp-action="SearchRecipes" method="get">
+            <p>
+               
+                <select asp-for="RecipeCategory" asp-items="Model.Categories" class="form-control">
+                    <option value="">All</option>
+                </select>
+
+               
+                <input type="text" asp-for="SearchString" class="form-control"/>
+                <input type="submit" value="Cauta" />
+            </p>
+        </form>
+
+
+        <div class="row">
+            <div class="column">
+                @foreach (var item in Model.Recipes)
+                {
+                    <div class="card">
+                        <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Paste cu pui si parmezan" style="width:100%">
+                        <div class="container">
+                            <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                            <p class="title"> @Html.DisplayFor(modelItem => item.Description)</p>
+                            <p>Ingrediente: ...</p>
+                            <p>Timp de gatire: @Html.DisplayFor(modelItem => item.CookingTime)</p>
+                            <a asp-controller="Recipe" asp-action="Details" class="button" asp-route-id="@item.RecipeId">Vezi reteta</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+</body>
+</html>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<recipePickerApp.Models.Recipe>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>Retete pe categorii</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/popular_recipes_style.css">
+
+</head>
+<body>
+    <h3 >Retete pe categori </h3>
+
+    <div class="row">
+        <div class="column">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Paste cu pui si parmezan" style="width:100%">
+                    <div class="container">
+                        <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                        <p class="title"> @Html.DisplayFor(modelItem => item.Description)</p>
+                        <p>Ingrediente: ...</p>
+                        <p>Timp de gatire: @Html.DisplayFor(modelItem => item.CookingTime)</p>
+                        <a asp-controller="Recipe" asp-action="Details" class="button" asp-route-id="@item.RecipeId">Vezi reteta</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</body>
+</html>

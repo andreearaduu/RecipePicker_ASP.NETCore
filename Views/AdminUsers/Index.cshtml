@@ -1,0 +1,40 @@
+﻿@model IEnumerable<recipePickerApp.Models.User>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <title>Retete de paine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/User/user_home.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/popular_recipes_style.css">
+
+</head>
+<body>
+    <div class="vertical-menu">
+        <a asp-controller="Admin" asp-action="user_home" >Contul meu</a>
+        <a asp-controller="AdminUsers" asp-action="Index" class="active">Useri</a>
+        <a asp-controller="AdminRecipes" asp-action="Index">Retete</a>
+        <a asp-controller="Recipe" asp-action="AddRecipe">ADAUGA RETETA</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Paste cu pui si parmezan" style="width:50%">
+                    <div class="container">
+                        <h2>@Html.DisplayFor(modelItem => item.Email)</h2>
+                        <p class="title"> @Html.DisplayFor(modelItem => item.UserName)</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</body>
+</html>

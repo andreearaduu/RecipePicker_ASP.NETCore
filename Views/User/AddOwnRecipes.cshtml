@@ -1,0 +1,90 @@
+﻿@model recipePickerApp.Models.Recipe
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h3 {
+            color: #e6ccff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200%;
+            background-color: blueviolet;
+            text-align: center;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title>Adauga o reteta</title>
+
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/AddRecipeStyle.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div style="text-align:center">
+            <h3>Adauga reteta</h3>
+            <p>Incarca propria ta reteta</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <form asp-action="AddOwnRecipes">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label">Nume</label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <label for="lname">Timp de preparare</label>
+                    <input asp-for="CookingTime" class="form-control" />
+                    <span asp-validation-for="CookingTime" class="text-danger"></span>
+
+                    <label for="lname">Descriere</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+
+                    <label for="country">Categorie</label>
+                    <select asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Category>()">
+                        <option value="">Alege o categorie</option>
+                    </select>
+
+                    @*<button class="btn" asp-controller="Ingredients" asp-action="AddIngredients">Adauga ingrediente</button>*@
+
+                    <label asp-for="CookingDecription" class="control-label">Mod de preparare</label>
+                    <textarea asp-for="CookingDecription" class="form-control" placeholder="Scrie modul de preparare" style="height:140px;width:718px;"></textarea>
+
+                    <span asp-validation-for="CookingDecription" class="text-danger"></span>
+                    
+                    @*<a asp-action="AddPhotoToRecipe" asp-route-RecipeId="RecipeId">
+                        <h1>AddPhoto</h1>
+                    </a>*@
+                    @*<form enctype="multipart/form-data" asp-action="AddPhotoToRecipe">
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="ProfileImage" class="control-label"></label>
+                                <div class="custom-file">
+                                    <input asp-for="ProfileImage" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <p><a class="button" asp-action="AddPhoto">Adauga o poza la profil</a></p>
+                        <input type="submit" value="submit" class="btn btn-sm btn-primary rounded-0 text-uppercase" />
+                    </form>*@
+                    <div class="form-group">
+                        <input type="submit" value="Creaza" class="btn btn-primary" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

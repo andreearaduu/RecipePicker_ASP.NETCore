@@ -1,0 +1,40 @@
+﻿@model IEnumerable<recipePickerApp.Models.Recipe>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Profilul tau</title>
+    <link rel="stylesheet" type="text/css" href="~/css/User/user_home.css">
+    <link rel="stylesheet" type="text/css" href="~/css/popular_recipes_style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+</head>
+<body>
+    <div class="vertical-menu">
+        <a asp-controller="User" asp-action="user_home">Contul meu</a>
+        <a asp-controller="User" asp-action="UserFavoriteRecipes">Retete FAVORITE</a>
+        <a asp-controller="User" asp-action="UserCookedRecipes">Retete GATITE</a>
+        <a asp-controller="User" asp-action="UserOwnRecipes" class="active">Retetele mele</a>
+    </div>
+
+
+    <div class="row">
+        <div class="column">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Paste cu pui si parmezan" style="width:100%">
+                    <div class="container">
+                        <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                        <p class="title"> @Html.DisplayFor(modelItem => item.Description)</p>
+                        <p>Ingrediente: ...</p>
+                        <p>Timp de gatire: @Html.DisplayFor(modelItem => item.CookingTime)</p>
+                        <a asp-controller="Recipe" asp-action="Details" class="button" asp-route-id="@item.RecipeId">Vezi reteta</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</body>
+</html>

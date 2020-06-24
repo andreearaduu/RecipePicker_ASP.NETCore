@@ -1,0 +1,65 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+h3 {
+    color: #e6ccff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+a {
+    color: #e6ccff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+    background-color: blueviolet;
+    text-align: center;
+}
+.bg-img {
+    /* The image used */
+    background: url("../css/images/Pizza-margherita.jpg");
+    /* Control the height of the image */
+    min-height: 380px;
+    /* Center and scale the image nicely */
+    margin-top:100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Full-width input fields */
+input {
+    width: 50%;
+    max-width:50px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #7300e6;
+}
+
+    input{
+        background-color: mediumslateblue;
+        outline: none;
+    }
+
+        input[type=text] {
+            background-color: #3CBC8D;
+            color: white;
+        }
+/* Set a style for the submit button */
+.btn {
+    background-color: #7300e6;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+        opacity: 1;
+    }

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the search field */
+        form.example input[type=text] {
+            padding: 10px;
+            padding-bottom:5px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
+
+        /* Style the submit button */
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #7300e6;
+            color: white;
+            font-size: 17px;
+            border: 1px solid #7300e6;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+        }
+
+            form.example button:hover {
+                background: #0b7dda;
+            }
+
+        /* Clear floats */
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .imag{
+            padding-top:20px;
+        }
+
+        .btn {
+            background-color: #28004d;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+            .btn:hover {
+                opacity: 1;
+            }
+    </style>
+    <meta charset="utf-8" />
+    <title>Recipe Picker</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div id="main">
+        <a class="btn" asp-controller="Recipe" asp-action="AddRecipe" > Adaugă o rețetă</a>
+
+        <!-- The form -->
+        <form class="example" action="action_page.php">
+            @*<input type="text" placeholder="Caută o rețetă" name="search">*@
+            <button asp-controller="Recipe" asp-action="SearchRecipes"><i class="fa fa-search"></i></button>
+        </form>
+
+    </div>
+    <img class="imag" src="~/images/dishes.jpg" />
+    <div class="cf">
+        <div class="box">
+            <a >
+                <img src="~/images/pizza.jpg" />
+
+            </a>
+        </div>
+        <div class="box middle">
+           <a>
+                <img src="~/images/pasta.jpg" />
+
+            </a>
+        </div><div class="box">
+            <a >
+                <img src="~/images/diet.jpg" />
+
+            </a>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

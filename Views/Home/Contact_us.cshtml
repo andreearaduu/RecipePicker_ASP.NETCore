@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h3 {
+            color: #e6ccff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 200%;
+            background-color: blueviolet;
+            text-align: center;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title>Contacteaza-ne</title>
+    <link rel="stylesheet" type="text/css" href="~/css/contact_us_style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div style="text-align:center">
+            <h3>Contacteaza-ne</h3>
+            <p>Poti trece sa bem o cafea sau scrie-ne un mesaj</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="~/images/street.jpg" style="width:100%">
+            </div>
+            <div class="column">
+                <form action="/action_page.php">
+                    <label for="fname">Nume</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Numele tau..">
+                    <label for="lname">Prenume</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Prenumele tau..">
+                    <label for="country">Judet</label>
+                    <select id="country" name="country">
+                        <option value="olt">Olt</option>
+                        <option value="dolj">Dolj</option>
+                        <option value="buc">Bucuresti</option>
+                    </select>
+                    <label for="subject">Subiect</label>
+                    <textarea id="subject" name="subject" placeholder="Scrie ceva.." style="height:170px"></textarea>
+                    <input type="submit" value="Trimite">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

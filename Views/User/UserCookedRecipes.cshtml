@@ -1,0 +1,80 @@
+﻿@model IEnumerable<recipePickerApp.Models.Recipe>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Profilul tau</title>
+    <link rel="stylesheet" type="text/css" href="~/css/User/user_home.css">
+    <link rel="stylesheet" type="text/css" href="~/css/popular_recipes_style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+
+</head>
+<body>
+    <div class="vertical-menu">
+        <a asp-controller="User" asp-action="user_home">Contul meu</a>
+        <a asp-controller="User" asp-action="UserFavoriteRecipes">Retete FAVORITE</a>
+        <a asp-controller="User" asp-action="UserCookedRecipes" class="active">Retete GATITE</a>
+        <a asp-controller="User" asp-action="UserOwnRecipes">Retetele mele</a>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Paste cu pui si parmezan" style="width:100%">
+                    <div class="container">
+                        <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                        <p class="title"> @Html.DisplayFor(modelItem => item.Description)</p>
+                        <p>Ingrediente: ...</p>
+                        <p>Timp de gatire: @Html.DisplayFor(modelItem => item.CookingTime)</p>
+                        <a asp-controller="Recipe" asp-action="Details" class="button" asp-route-id="@item.RecipeId">Vezi reteta</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    @*<div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="~/images/paste-cu-pui-si-parmezan.jpg" alt="Paste cu pui si parmezan" style="width:100%">
+                    <div class="container">
+                        <h2>Paste cu pui si parmezan</h2>
+                        <p class="title">O mancare rapida si gustoasa</p>
+                        <p>Ingrediente: paste, pui, parmezan, etc...</p>
+                        <p>Timp de gatire: 30 min</p>
+                        <a asp-controller="Recipe" asp-action="RecipeDetails" class="button">Vezi reteta</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="~/images/peste-la-cuptor.jpg" alt="peste-la-cuptor" style="width:100%">
+                    <div class="container">
+                        <h2>Peste la cuptor</h2>
+                        <p class="title">O retea deosebita pentru ocazii deosebite</p>
+                        <p>Ingrediente: peste proaspat, cartofi, morcovi, lamaie, etc...</p>
+                        <p>Timp gatire: 50 min</p>
+                        <p><button class="button">Vezi retea</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="~/images/Pizza-margherita.jpg" alt="pizza-margherita" style="width:100%">
+                    <div class="container">
+                        <h2>Pizza Margherita</h2>
+                        <p class="title">Pizza pentru incepatori, rapida si gustoasa</p>
+                        <p>Ingrediente: faina, parmezan, rosii cherry,etc...</p>
+                        <p>Timp gatire: 40 min</p>
+                        <p><button class="button">Vezi reteta</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</body>
+</html>

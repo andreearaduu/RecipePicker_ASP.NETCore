@@ -1,0 +1,163 @@
+﻿html {
+    background-color: white;
+}
+
+body {
+    background-color: #e6ccff;
+    margin: 0 auto;
+    width: 960px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #373535;
+}
+
+/* HEADER SECTION */
+header {
+    height: 150px;
+    padding-top: 20px;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+    font-size: 16px;
+}
+
+header li:first-child {
+    border-right: 1px solid #373535;
+}
+
+.left {
+    width: 320px;
+    float: left;
+}
+
+    .left ul {
+        padding-left: 30px;
+        padding-top: 90px;
+    }
+
+.right {
+    width: 320px;
+    float: right;
+}
+
+    .right ul {
+        padding-right: 30px;
+        padding-top: 90px;
+    }
+
+#logo {
+    width: 320px;
+    float: left;
+    text-align: center;
+    color: #7300e6;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+
+    #logo p {
+        margin: 0;
+    }
+
+/* Content */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+form {
+    padding-top: 20px;
+    text-align: right;
+}
+
+.box {
+    position: relative;
+    float: left;
+    margin: 15px 0;
+}
+
+    .box img {
+        position: relative;
+        z-index: 1;
+        margin-left: 15px;
+    }
+
+    .box p {
+        position: absolute;
+        width: 100%;
+        top: 12px;
+        z-index: 2;
+        text-align: center;
+        font-size: 24px;
+        margin-left: 15px;
+    }
+
+.middle p {
+    color: white;
+}
+
+/* FOOTER */
+nav {
+    font-size: 16px;
+    text-align: center;
+}
+
+footer {
+    background-color: #e7e0e0;
+    height: 140px;
+    padding-top: 20px;
+}
+
+    footer li {
+        border-right: 1px solid #000000;
+    }
+
+        footer li:last-child {
+            border-right: none;
+        }
+
+    footer img {
+        display: block;
+        margin: 0 auto;
+    }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h3 {
+    color: #e6ccff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200%;
+    background-color: blueviolet;
+    text-align: center;
+}

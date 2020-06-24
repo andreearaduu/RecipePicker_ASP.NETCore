@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0" />*@
+    <title>@ViewData["Title"] RecipePicker</title>
+
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <ul>
+                <li><a asp-controller="Recipe" asp-action="Category">Categorii</a></li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <partial name="_LoginPartial" />
+        </div>
+        <div id="logo">
+            <img src="~/images/chefs-hat.png" />
+            <p><a asp-controller="Home" asp-action="Index">RecipePicker</a></p>
+        </div>
+    </header>
+
+    @RenderBody()
+    <footer>
+        <img src="~/images/cutlery.png" />
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="About_us">About us</a></li>
+                <li><a asp-controller="Home" asp-action="Contact_us">Contact us</a></li>
+                <li><a asp-controller="Admin" asp-action="Home">Admin</a></li>
+            </ul>
+        </nav>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

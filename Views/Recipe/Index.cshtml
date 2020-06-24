@@ -1,0 +1,101 @@
+﻿@model IEnumerable<recipePickerApp.Models.Recipe>
+<link rel="stylesheet" type="text/css" href="~/css/popular_recipes_style.css">
+<link rel="stylesheet" type="text/css" href="~/css/style.css">
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="AddRecipe">Create New</a>
+</p>
+
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="~/images/@Html.DisplayNameFor(model => model.ImageUrl)" alt="Paste cu pui si parmezan" style="width:100%">
+            <div class="container">
+                <h2>@Html.DisplayNameFor(model => model.Name)</h2>
+                <p class="title"> @Html.DisplayNameFor(model => model.Description)</p>
+                <p>Ingrediente: ...</p>
+                <p>Timp de gatire: @Html.DisplayNameFor(model => model.CookingTime)</p>
+                <a asp-controller="Recipe" asp-action="Details" class="button">Vezi reteta</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Paste cu pui si parmezan" style="width:100%">
+                <div class="container">
+                    <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                    <p class="title"> @Html.DisplayFor(modelItem => item.Description)</p>
+                    <p>Ingrediente: ...</p>
+                    <p>Timp de gatire: @Html.DisplayFor(modelItem => item.CookingTime)</p>
+                    <a asp-controller="Recipe" asp-action="Details" class="button" asp-route-id="@item.RecipeId">Vezi reteta</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CookingDecription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CookingTime)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RecipeType)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.CookingDecription)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CookingTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecipeType)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RecipeId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RecipeId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RecipeId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+
