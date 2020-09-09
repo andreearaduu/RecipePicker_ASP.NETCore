@@ -1,11 +1,9 @@
 ﻿using recipePickerApp.Exceptions;
 using recipePickerApp.Models;
-using recipePickerApp.Repository;
 using recipePickerApp.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace recipePickerApp.Service.Implementation
 {
@@ -42,8 +40,6 @@ namespace recipePickerApp.Service.Implementation
 
         public ICollection<Review> getReviewsForRecipe(long Id)
         {
-            //Recipe recipe = _repositoryWrapper.Recipe.findById(Id);
-            //return recipe.Reviews.ToList();
             if(Id==0)
             {
                 throw new Exception("Recipe id is null");

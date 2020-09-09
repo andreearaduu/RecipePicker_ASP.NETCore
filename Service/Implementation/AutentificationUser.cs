@@ -2,8 +2,6 @@
 using recipePickerApp.Models;
 using recipePickerApp.Service.Interface;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace recipePickerApp.Service.Implementation

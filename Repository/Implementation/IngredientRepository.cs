@@ -1,11 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using recipePickerApp.DataContext;
+﻿using recipePickerApp.DataContext;
 using recipePickerApp.Models;
 using recipePickerApp.Repository.Implementation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace recipePickerApp.Repository
 {

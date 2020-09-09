@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using recipePickerApp.DataContext;
+﻿using recipePickerApp.DataContext;
 using recipePickerApp.Models;
 using recipePickerApp.Repository.Implementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace recipePickerApp.Repository
 {
@@ -63,29 +61,6 @@ namespace recipePickerApp.Repository
             userContext.SaveChanges();
 
         }
-
-        //public Recipe addFavoriteRecipeToUser(Recipe recipe, String userId)
-        //{
-        //    ICollection<Recipe> favRecipes = userContext.UserFavoriteRecipes
-        //        .Where(u=>u.UserId.Equals(userId))
-        //        .Select(p => p.recipe)
-        //        .ToList();
-        //    favRecipes.Add(recipe);
-        //    userContext.SaveChanges();
-        //    return recipe;
-           
-        //}
-
-        //public Recipe addCookedRecipeToUser(Recipe recipe, String userId)
-        //{
-        //    ICollection<Recipe> cookedRecipes = userContext.UserCookedRecipes
-        //         .Where(u => u.UserId.Equals(userId))
-        //         .Select(p => p.recipe)
-        //         .ToList();
-        //    cookedRecipes.Add(recipe);
-        //    userContext.SaveChanges();
-        //    return recipe;
-        //}
 
         public ICollection<Recipe> FindByCategory(string category)
         {

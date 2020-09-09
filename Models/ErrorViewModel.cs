@@ -1,5 +1,3 @@
-using System;
-
 namespace recipePickerApp.Models
 {
     public class ErrorViewModel

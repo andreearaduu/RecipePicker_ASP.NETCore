@@ -7,7 +7,6 @@ using recipePickerApp.Service;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace recipePickerApp.Controllers
 {
@@ -86,7 +85,7 @@ namespace recipePickerApp.Controllers
 
         
        
-        public async Task<IActionResult> AddFavoriteRecipes(long recipeId)
+        public IActionResult AddFavoriteRecipes(long recipeId)
         {
             var recipe = recipeService.GetRecipeById(recipeId);
             try
@@ -119,7 +118,7 @@ namespace recipePickerApp.Controllers
             return RedirectToAction("UserFavoriteRecipes", "User");
         }
 
-        public async Task<IActionResult> AddCookedRecipes(long recipeId)
+        public IActionResult AddCookedRecipes(long recipeId)
         {
             var recipe = recipeService.GetRecipeById(recipeId);
             try
@@ -157,7 +156,7 @@ namespace recipePickerApp.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddReview([FromForm]Review review, long recipeId)
+        public IActionResult AddReview([FromForm]Review review, long recipeId)
         {
             
             try
@@ -191,7 +190,7 @@ namespace recipePickerApp.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddPhoto(PhotoModel model)
+        public IActionResult AddPhoto(PhotoModel model)
         {
             if (ModelState.IsValid)
             {
@@ -219,7 +218,7 @@ namespace recipePickerApp.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddPhotoToRecipe(long RecipeId,RecipePhotoModel model)
+        public IActionResult AddPhotoToRecipe(long RecipeId,RecipePhotoModel model)
         {
             if (ModelState.IsValid)
             {
@@ -249,7 +248,6 @@ namespace recipePickerApp.Controllers
             }
            
             string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-            //string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ProfileImage.FileName;
             string uniqueFileName = model.ProfileImage.FileName;
             string filePath = Path.Combine(Path.Combine(webHostEnvironment.WebRootPath, "images"), model.ProfileImage.FileName);
                 using (var fileStream = new FileStream(Path.Combine(Path.Combine(webHostEnvironment.WebRootPath, "images"), model.ProfileImage.FileName), FileMode.Create))
@@ -270,7 +268,6 @@ namespace recipePickerApp.Controllers
             }
 
             string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-            //string uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ProfileImage.FileName;
             string uniqueFileName = model.ProfileImage.FileName;
             string filePath = Path.Combine(Path.Combine(webHostEnvironment.WebRootPath, "images"), model.ProfileImage.FileName);
             using (var fileStream = new FileStream(Path.Combine(Path.Combine(webHostEnvironment.WebRootPath, "images"), model.ProfileImage.FileName), FileMode.Create))

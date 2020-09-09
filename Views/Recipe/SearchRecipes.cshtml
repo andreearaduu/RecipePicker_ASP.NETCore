@@ -25,63 +25,6 @@
 </head>
 <body>
     <h3>Cauta retete</h3>
-    @*<div class="sidenav">
-        <h2 style="background-color:blueviolet;color:aliceblue">Categoria</h2>*@
-        @* asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<Category>*@
-        @*@using (Html.BeginForm())
-        {
-            for (var i = 0; i < Model.Category.c(; i++)
-            {
-                <table>
-                    <tr>
-                        <td>
-                            @Html.HiddenFor(it => it[i].City_ID)
-                            @Html.HiddenFor(it => it[i].City_Name)
-                            @Html.DisplayFor(it => it[i].City_Name)
-                        </td>
-                        <td>
-                            @Html.CheckBoxFor(it => it[i].IsSelected, new { Style = "vertical-align:3px}" })
-                        </td>
-                    </tr>
-                </table>
-            }
-            <input id="Submit1" type="submit" value="submit" />
-        }*@
-        @*<label class="container">
-                One
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">
-                Two
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">
-                Three
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-
-            <label class="container">
-                Four
-                <input type="checkbox">
-                <span class="checkmark"></span>
-            </label>
-        </div>*@
-
-        @*<form class="example" action="action_page.php">
-        @using (Html.BeginForm("SearchRecipes", "RecipeController", FormMethod.Get))
-        {
-            @Html.TextBox("name");
-           <input type="text" placeholder="Caută o rețetă" name="name">
-            <button><i class="fa fa-search"></i></button>
-        }
-        </form>*@
-
-        <!-- The form -->
 
         <form asp-controller="Recipe" asp-action="SearchRecipes" method="get">
             <p>

@@ -2,9 +2,7 @@
 using recipePickerApp.Models;
 using recipePickerApp.Repository.Implementation;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace recipePickerApp.Repository
 {
@@ -25,13 +23,5 @@ namespace recipePickerApp.Repository
                 .Where(user => user.Id== Id)
                 .SingleOrDefault();
         }
-
-        //public User GetByUserId(Guid userIdGuid)
-        //{
-        //    return UserContext.UserFavoriteRecepies
-        //        .Where(user => user.UserLogId == userIdGuid)
-        //        .SingleOrDefault();
-
-        //}
     }
 }

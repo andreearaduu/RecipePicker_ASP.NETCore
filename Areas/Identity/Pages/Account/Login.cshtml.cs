@@ -12,9 +12,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using recipePickerApp.Models;
-using System.Buffers;
-using System.Web;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 using Microsoft.AspNetCore.Http;
 
 namespace recipePickerApp.Areas.Identity.Pages.Account

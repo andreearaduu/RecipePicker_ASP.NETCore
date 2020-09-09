@@ -1,11 +1,5 @@
 ﻿using recipePickerApp.Repository;
 using recipePickerApp.Repository.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace recipePickerApp.Service
